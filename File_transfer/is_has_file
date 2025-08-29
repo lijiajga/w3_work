@@ -1,0 +1,20 @@
+import os
+
+def are_files_in_file1(file1_path, file2_path):
+    # 获取file1文件夹中的所有文件
+    files_in_file1 = set(os.listdir(file1_path))
+    # 获取file2文件夹中的所有文件
+    files_in_file2 = set(os.listdir(file2_path))
+    # 判断file2中的文件是否都在file1中
+    all_exist = files_in_file2.issubset(files_in_file1)
+    return all_exist
+
+# 定义文件夹路径
+file1_path = r'D:\Pan_xfusion_worksapce\1.《《任务》》\7月\1.知识库上传\7.w3\w3_知识库(强匹配)\ISC+通用-流程文件-内部公开'
+file2_path = r'D:\Pan_xfusion_worksapce\1.《《任务》》\7月\1.知识库上传\7.w3\w3知识库实际上传\ISC+通用-流程文件-内部公开'
+
+# 检查file2中的文件是否都在file1中
+if are_files_in_file1(file1_path, file2_path):
+    print("file2中的所有文件都在file1中")
+else:
+    print("file2中的文件有些不在file1中!!!!!!!!!!!!!!!!!!!!!!!")
